@@ -82,7 +82,7 @@ public interface XxxMapper extends Mapper<Xxx>{
             "userIds":["id1","id2"...]
         }
         ```
-        * `isAdmin()` 如果返回`true`,则说明为管理员,不调整数据权限  
+        * `isSkip()` 如果返回`true`,不过滤数据权限
     ```
       public class SysUser{
         ...
