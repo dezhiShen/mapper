@@ -5,11 +5,11 @@ spring:
   jackson:
     default-property-inclusion: non_null
   datasource:
-    url: jdbc:mysql://10.116.193.171:30306/xphealth?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:3306/xphealth?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
     driverClassName: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    username: root
-    password: a0r1se123
+    username: yourusername
+    password: yourpassoword
     filters: stat
     maxActive: 20
     initialSize: 1
