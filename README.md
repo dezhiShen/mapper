@@ -138,7 +138,7 @@ data-permission:
 **ps:此处声明了单一参数时,参数名为`userId`**
 ####
 #### demo
-[SysUserMapperTest](.src/test/java/cn/dezhishen/core/test/SysUserMapperTest.java)
+[SysUserMapperTest](src/test/java/cn/dezhishen/core/test/SysUserMapperTest.java)
 
 ## todo
 - [x] 整合PageHelper
@@ -147,3 +147,5 @@ data-permission:
 - [x] ExampleMapper
 - [x] UpdateMapper
 - [x] DeleteMapper
+- [ ] 方法上增加注解,对该方法跳过权限过滤
+    - 等同配置文件`ignored`
