@@ -1,0 +1,41 @@
+server:
+  port: 8443
+# 数据源配置
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  datasource:
+    url: jdbc:mysql://10.116.193.171:30306/xphealth?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    driverClassName: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: a0r1se123
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+mapper:
+  before: true
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: false
+data-permission:
+  enabled: true
+  single-param-names:
+    "cn.dezhishen.core.test.SysUserMapper.selectById": "userId"
+  ignored:
+    - cn.dezhishen.core.test.SysUserMapper.selectByIdForIgnored
+logging:
+  level:
+    cn.dezhishen.core.test: debug #打印sql

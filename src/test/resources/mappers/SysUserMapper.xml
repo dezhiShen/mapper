@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dezhishen.core.test.SysUserMapper">
+    <resultMap id="BaseResultMap" type="cn.dezhishen.core.test.SysUser">
+        <id column="user_id" property="userId"/>
+    </resultMap>
+    <select id="selectById" resultMap="BaseResultMap">
+        select user_id from sys_user where user_id = #{userId}
+        <if test="!_isSkip_">
+            and user_id in
+            <foreach collection="userIds" item="_id" open="(" close=")" separator=",">
+                #{_id}
+            </foreach>
+        </if>
+    </select>
+    <select id="selectByIdForIgnored" resultMap="BaseResultMap">
+        select user_id from sys_user where user_id = #{id}
+        <if test="!_isSkip_">
+            and user_id in
+            <foreach collection="userIds" item="_id" open="(" close=")" separator=",">
+                #{_id}
+            </foreach>
+        </if>
+    </select>
+</mapper>
